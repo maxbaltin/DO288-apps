@@ -1,0 +1,219 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------< com.redhat.training.openshift:hello >-----------------
+[INFO] Building Red Hat Training Hello Java app 1.0
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] >>> fabric8-maven-plugin:4.1.0:deploy (default-cli) > install @ hello >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hello ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/DO288-apps/micro-java/src/main/resources
+[INFO] 
+[INFO] --- fabric8-maven-plugin:4.1.0:resource (fmp) @ hello ---
+[INFO] F8: Using docker image name of namespace: maxbaltin-micro-java
+[INFO] F8: Running generator thorntail-v2
+[INFO] F8: thorntail-v2: Using Docker image fabric8/s2i-java:2.3 as base / builder
+[INFO] F8: using resource templates from /home/student/DO288-apps/micro-java/src/main/fabric8
+[INFO] F8: fmp-service: Adding a default service 'hello' with ports [8080]
+[INFO] F8: fmp-revision-history: Adding revision history limit to 2
+[INFO] F8: validating /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/kubernetes/hello-service.yml resource
+[INFO] F8: validating /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/kubernetes/hello-deployment.yml resource
+[INFO] F8: validating /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/kubernetes/env-config-configmap.yml resource
+[INFO] F8: using resource templates from /home/student/DO288-apps/micro-java/src/main/fabric8
+[INFO] F8: fmp-service: Adding a default service 'hello' with ports [8080]
+[INFO] F8: fmp-revision-history: Adding revision history limit to 2
+[INFO] F8: validating /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/openshift/hello-service.yml resource
+[INFO] F8: validating /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/openshift/hello-deploymentconfig.yml resource
+[INFO] F8: validating /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/openshift/hello-route.yml resource
+[INFO] F8: validating /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/openshift/env-config-configmap.yml resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ hello ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hello ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/student/DO288-apps/micro-java/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ hello ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ hello ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ hello ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [hello] in [/home/student/DO288-apps/micro-java/target/hello]
+[INFO] Processing war project
+[INFO] Webapp assembled in [94 msecs]
+[INFO] Building war: /home/student/DO288-apps/micro-java/target/hello.war
+[INFO] 
+[INFO] --- thorntail-maven-plugin:2.4.0.Final:package (default) @ hello ---
+Resolving 62 out of 286 artifacts
+[INFO] Repackaging .war: /home/student/DO288-apps/micro-java/target/hello.war
+[INFO] Repackaged .war: /home/student/DO288-apps/micro-java/target/hello.war
+[INFO] 
+[INFO] --- fabric8-maven-plugin:4.1.0:build (fmp) @ hello ---
+[INFO] F8: Running in OpenShift mode
+[INFO] F8: Using OpenShift build with strategy S2I
+[INFO] F8: Running generator thorntail-v2
+[INFO] F8: thorntail-v2: Using Docker image fabric8/s2i-java:2.3 as base / builder
+[INFO] Copying files to /home/student/DO288-apps/micro-java/target/docker/hello/1.0/build/maven
+[INFO] Building tar: /home/student/DO288-apps/micro-java/target/docker/hello/1.0/tmp/docker-build.tar
+[INFO] F8: [hello:1.0] "thorntail-v2": Created docker source tar /home/student/DO288-apps/micro-java/target/docker/hello/1.0/tmp/docker-build.tar
+[INFO] F8: Updating BuildServiceConfig hello-s2i for Source strategy
+[INFO] F8: Adding to ImageStream hello
+[INFO] F8: Starting Build hello-s2i
+[INFO] F8: Waiting for build hello-s2i-3 to complete...
+[INFO] F8: Caching blobs under "/var/cache/blobs".
+[INFO] F8: Getting image source signatures
+[INFO] F8: Copying blob sha256:7dc0dca2b1516961d6b3200564049db0a6e0410b370bb2189e2efae0d368616f
+[INFO] F8: Copying blob sha256:d6fff4bb0996493ee898ab513fb1570c797d91a2d77365cb8ce60ac995d61bef
+[INFO] F8: Copying blob sha256:4b44292fec1d5442d3e34b2c3adb430711d3c231d70954a9d42d2217f959a3a5
+[INFO] F8: Copying blob sha256:1fdb7be5b7e04d78c06271c1fac140923afd7fceba99e670b43a4caeb9e12fe7
+[INFO] F8: Copying blob sha256:e39e0acd05a132f9851ab89aa9c003304acaea15239d98a49e66e1a9c82b897f
+[INFO] F8: Copying blob sha256:2fab1038512362e3ecc53bd088d15b573554228e40c3a8c2b6a35dd034319d2e
+[INFO] F8: Copying blob sha256:3b0e4c1fe20d89e41b1a408582ee80141da58e972e1e85bb67a3bbb723ac5ba9
+[INFO] F8: Copying blob sha256:444e42197d037bb691bfd39d27dadfddf260c117e648287ffdc9d06b0deb9d9b
+[INFO] F8: Copying blob sha256:edd9a9ea806e66bc81595225cd1eb3587288e91c3f0e7a0e050d090529da899c
+[INFO] F8: Copying blob sha256:279f9e9dbd81ffde465c3613c8d42668fc7f90fcdd0ea2fc096dbe00d422ad3d
+[INFO] F8: Copying blob sha256:e7886c5bdbb9091a5fa49fecb3b38ae3b86b4dc3d898f35868ea304a07858fb1
+[INFO] F8: Copying blob sha256:d4feb2e228a99db66740d8a9716e7b425433cf76c6c96ace4a240a48db221b8a
+[INFO] F8: Copying blob sha256:728478adadf64ecda279321079d1a30871f5698a434390e893f4924cc3f3772b
+[INFO] F8: Copying blob sha256:05562722fbe3d386d80195a54e38230f27521c800957f861bbe1f4aa16cee114
+[INFO] F8: Copying blob sha256:5d7ab3a9fe79144e76610e53f4ca88facbaa68d78a4d652dd5ec01b502a15eef
+[INFO] F8: Copying blob sha256:8700ab630acc9c991fd8c8d432f57f8e667269a84cd6c4af7d4bb526d39a7fbd
+[INFO] F8: Copying blob sha256:6df3de21051156aa46c745270ffeaad903d7457901761412c7fdcc175425b11c
+[INFO] F8: Copying blob sha256:86b908ea994135af1d1bebc0376f820b833c710d54db966a6248bfce32a6b0f0
+[INFO] F8: Copying blob sha256:b1e6f56c9412d73422f3d05a420d8060910afe9df98eab26b64f2419be72b41c
+[INFO] F8: Copying blob sha256:5530204593f325c8521f77e253694b97cc5390d1e14d0493c35b0eb75f4bc57e
+[INFO] F8: Copying blob sha256:2bea995a93a4fb35fffb148c149f340652271706e452e5f49f7e30988b29fe33
+[INFO] F8: Copying blob sha256:dd32d2faf9fa4e68f8a7195033339c20be7c43096b490f7e39f9778f2ba56e8b
+[INFO] F8: Copying blob sha256:dde9d98ac0071a3ace2bd04b41e99cc440183f7a26083253bb612b9e5955f8ee
+[INFO] F8: Copying blob sha256:94b14ee1a4420484af51a0ed5b9457c83523b69effdbfa57c0704501f19431e2
+[INFO] F8: Copying blob sha256:854b48faa47da5e0268a141d13643359a3c01bbf40ef42361d2ee884715ecdf8
+[INFO] F8: Copying blob sha256:b66cdd67f702702aa7ed8edbac84cd97c42e8357a5a519e57d94dc23ad144a64
+[INFO] F8: Copying config sha256:10a0b9c43308245e87a0fef6a30e759ff18af8412788b28161afe04d02c990aa
+[INFO] F8: Writing manifest to image destination
+[INFO] F8: Storing signatures
+[INFO] F8: Generating dockerfile with builder image fabric8/s2i-java:2.3
+[INFO] F8: STEP 1: FROM fabric8/s2i-java:2.3
+[INFO] F8: STEP 2: LABEL "io.openshift.build.image"="fabric8/s2i-java:2.3" "io.openshift.build.source-location"="/tmp/build/inputs"
+[INFO] F8: STEP 3: ENV AB_PROMETHEUS_OFF="true" JAVA_APP_DIR="/deployments" OPENSHIFT_BUILD_NAME="hello-s2i-3" OPENSHIFT_BUILD_NAMESPACE="maxbaltin-micro-java"
+[INFO] F8: STEP 4: USER root
+[INFO] F8: STEP 5: COPY upload/src /tmp/src
+[INFO] F8: STEP 6: RUN chown -R 1000:0 /tmp/src
+[INFO] F8: time="2020-08-07T14:21:08Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah726257530/mnt/rootfs\": error checking if \"/tmp/buildah726257530/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+[INFO] F8: time="2020-08-07T14:21:08Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah726257530/mnt/rootfs\": error checking if \"/tmp/buildah726257530/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+[INFO] F8: STEP 7: USER 1000
+[INFO] F8: STEP 8: RUN /usr/local/s2i/assemble
+[INFO] F8: ==================================================================
+[INFO] F8: Starting S2I Java Build .....
+[INFO] F8: S2I binary build from fabric8-maven-plugin detected
+[INFO] F8: Copying binaries from /tmp/src/maven to /deployments ...
+[INFO] F8: Checking for fat jar archive...
+[INFO] F8: Found hello-thorntail.jar...
+[INFO] F8: ... done
+[INFO] F8: time="2020-08-07T14:21:10Z" level=warning msg="pkg/chroot: error unmounting \"/tmp/buildah098423631/mnt/rootfs\": error checking if \"/tmp/buildah098423631/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+[INFO] F8: time="2020-08-07T14:21:10Z" level=warning msg="pkg/bind: error unmounting \"/tmp/buildah098423631/mnt/rootfs\": error checking if \"/tmp/buildah098423631/mnt/rootfs/sys/fs/cgroup/perf_event\" is mounted: no such file or directory"
+[INFO] F8: STEP 9: CMD /usr/local/s2i/run
+[INFO] F8: STEP 10: COMMIT temp.builder.openshift.io/maxbaltin-micro-java/hello-s2i-3:f1634568
+[INFO] F8: Getting image source signatures
+[INFO] F8: Copying blob sha256:bcc97fbfc9e1a709f0eb78c1da59caeb65f43dc32cd5deeb12b8c1784e5b8237
+[INFO] F8: Copying blob sha256:4dbf6f8e65266ba1033bc933ee4e93e4fd5a5c912fe312ae0bd4b8349315c927
+[INFO] F8: Copying blob sha256:f515d4009e192a6828b8cbfe57b44282f3f7f94dd770bc24fbd7667b46104402
+[INFO] F8: Copying blob sha256:187068858de1a1bfe819ed2daaedf98165ff4f2fdfa94688a8a210da94d03a5a
+[INFO] F8: Copying blob sha256:67f9d5f2d2adc7dc615c7c19bb2d359cc09542507f580aa1063447b11888f2c1
+[INFO] F8: Copying blob sha256:b0e776602fb699508f7542ff79226b4989e682fc6e8c9ad333c415036163dada
+[INFO] F8: Copying blob sha256:99655d012649feba5723686e613e7043b922763d4eb32bf8e8fbae22197eb422
+[INFO] F8: Copying blob sha256:5cf9675b81d43432c669204eaa519cdff16a72ad77840c65422a9140f9069259
+[INFO] F8: Copying blob sha256:204e205d6a8324c6f2bf8a87c03da3aae056c7a3a05891e78ae10bb9669ec506
+[INFO] F8: Copying blob sha256:44c74b2d9af7905e9a48f6b246fada3954d8bfaffa632b4e3d4544dd7d098e0b
+[INFO] F8: Copying blob sha256:b0de499398d7e7688d6dc462fd86c3700e450d71056b0914f20c044ecb3900c8
+[INFO] F8: Copying blob sha256:78420d45c69a3114490cd4860235c1be87f4aa1e8e184fb25ae87f90df6a9e5e
+[INFO] F8: Copying blob sha256:3a434c575e66c5a1f9fe176493327c1217530137ccb9ce9358ec9eaf15c85f5e
+[INFO] F8: Copying blob sha256:2db8eeafbb0b25b92852fe703d16dbac4f4a0e463f414c48622d983ef35c56d8
+[INFO] F8: Copying blob sha256:c449eef1f16d06a058450cd46b21c68209faf63df9fafc96beff11b1f6741436
+[INFO] F8: Copying blob sha256:f0846f8cd3abd07702a44e64f03fec86d4c1ed62ce34800d966dd612dc9aa706
+[INFO] F8: Copying blob sha256:26c09e9455ec6c4f46ebe63c8bd0e66462a66387e84c47b57960903ec561e651
+[INFO] F8: Copying blob sha256:b46fa3b23bb587f36e2ddc7302325a0656612d3e25f1014ea1542ef1a7a11f18
+[INFO] F8: Copying blob sha256:4cc79f25d469867943caffadc23cbbf04fd0fa197f9970971a895e87e9144c2f
+[INFO] F8: Copying blob sha256:836bbeb65dcf9de34a98d9d5014115599a2d0a96f45a2c27467d163e6a2e65a1
+[INFO] F8: Copying blob sha256:f38efdc13981a067765e03cbdb73a0396c13f201d60fe2af5587dcf3f2c7e4a8
+[INFO] F8: Copying blob sha256:e42b0d9852430bd040f4dd7c456f5e0f8a7610bea08c17d0a8052ca65fcfc7dd
+[INFO] F8: Copying blob sha256:e91c797f917d1e3084836cd13ba0d6328951853f08da7d9791af51ce22bcc7e1
+[INFO] F8: Copying blob sha256:7d50259746069942dcb4ea1a531ed9d7294f264597519ef328a84cadd66a5a12
+[INFO] F8: Copying blob sha256:51386491d44c61f9d5572100154a295567450ffcdaf49a4a3cce1fab90583604
+[INFO] F8: Copying blob sha256:5bb5ed700464aea14a6c007e8fea1c7a2dd8776701bb72b91332f3cf9abe7291
+[INFO] F8: Copying blob sha256:5bb2ddc0519173677a4b50da0b698066b237886a6241be5429489219e71f917f
+[INFO] F8: Copying config sha256:0a8791a075fbdbb877e14dc34ff8c18429122e6acb177a7cf5a3afc834b9e88a
+[INFO] F8: Writing manifest to image destination
+[INFO] F8: Storing signatures
+[INFO] F8: 0a8791a075fbdbb877e14dc34ff8c18429122e6acb177a7cf5a3afc834b9e88a
+[INFO] F8: 
+[INFO] F8: Pushing image image-registry.openshift-image-registry.svc:5000/maxbaltin-micro-java/hello:1.0 ...
+[INFO] F8: Getting image source signatures
+[INFO] F8: Copying blob sha256:4b44292fec1d5442d3e34b2c3adb430711d3c231d70954a9d42d2217f959a3a5
+[INFO] F8: Copying blob sha256:e39e0acd05a132f9851ab89aa9c003304acaea15239d98a49e66e1a9c82b897f
+[INFO] F8: Copying blob sha256:2fab1038512362e3ecc53bd088d15b573554228e40c3a8c2b6a35dd034319d2e
+[INFO] F8: Copying blob sha256:d6fff4bb0996493ee898ab513fb1570c797d91a2d77365cb8ce60ac995d61bef
+[INFO] F8: Copying blob sha256:1fdb7be5b7e04d78c06271c1fac140923afd7fceba99e670b43a4caeb9e12fe7
+[INFO] F8: Copying blob sha256:7dc0dca2b1516961d6b3200564049db0a6e0410b370bb2189e2efae0d368616f
+[INFO] F8: Copying blob sha256:edd9a9ea806e66bc81595225cd1eb3587288e91c3f0e7a0e050d090529da899c
+[INFO] F8: Copying blob sha256:3b0e4c1fe20d89e41b1a408582ee80141da58e972e1e85bb67a3bbb723ac5ba9
+[INFO] F8: Copying blob sha256:279f9e9dbd81ffde465c3613c8d42668fc7f90fcdd0ea2fc096dbe00d422ad3d
+[INFO] F8: Copying blob sha256:444e42197d037bb691bfd39d27dadfddf260c117e648287ffdc9d06b0deb9d9b
+[INFO] F8: Copying blob sha256:d4feb2e228a99db66740d8a9716e7b425433cf76c6c96ace4a240a48db221b8a
+[INFO] F8: Copying blob sha256:728478adadf64ecda279321079d1a30871f5698a434390e893f4924cc3f3772b
+[INFO] F8: Copying blob sha256:e7886c5bdbb9091a5fa49fecb3b38ae3b86b4dc3d898f35868ea304a07858fb1
+[INFO] F8: Copying blob sha256:8700ab630acc9c991fd8c8d432f57f8e667269a84cd6c4af7d4bb526d39a7fbd
+[INFO] F8: Copying blob sha256:5d7ab3a9fe79144e76610e53f4ca88facbaa68d78a4d652dd5ec01b502a15eef
+[INFO] F8: Copying blob sha256:05562722fbe3d386d80195a54e38230f27521c800957f861bbe1f4aa16cee114
+[INFO] F8: Copying blob sha256:86b908ea994135af1d1bebc0376f820b833c710d54db966a6248bfce32a6b0f0
+[INFO] F8: Copying blob sha256:6df3de21051156aa46c745270ffeaad903d7457901761412c7fdcc175425b11c
+[INFO] F8: Copying blob sha256:5530204593f325c8521f77e253694b97cc5390d1e14d0493c35b0eb75f4bc57e
+[INFO] F8: Copying blob sha256:b1e6f56c9412d73422f3d05a420d8060910afe9df98eab26b64f2419be72b41c
+[INFO] F8: Copying blob sha256:dd32d2faf9fa4e68f8a7195033339c20be7c43096b490f7e39f9778f2ba56e8b
+[INFO] F8: Copying blob sha256:dde9d98ac0071a3ace2bd04b41e99cc440183f7a26083253bb612b9e5955f8ee
+[INFO] F8: Copying blob sha256:2bea995a93a4fb35fffb148c149f340652271706e452e5f49f7e30988b29fe33
+[INFO] F8: Copying blob sha256:94b14ee1a4420484af51a0ed5b9457c83523b69effdbfa57c0704501f19431e2
+[INFO] F8: Copying blob sha256:854b48faa47da5e0268a141d13643359a3c01bbf40ef42361d2ee884715ecdf8
+[INFO] F8: Copying blob sha256:b66cdd67f702702aa7ed8edbac84cd97c42e8357a5a519e57d94dc23ad144a64
+[INFO] F8: Copying blob sha256:5bb2ddc0519173677a4b50da0b698066b237886a6241be5429489219e71f917f
+[INFO] F8: Copying config sha256:0a8791a075fbdbb877e14dc34ff8c18429122e6acb177a7cf5a3afc834b9e88a
+[INFO] F8: Writing manifest to image destination
+[INFO] F8: Storing signatures
+[INFO] F8: Successfully pushed image-registry.openshift-image-registry.svc:5000/maxbaltin-micro-java/hello@sha256:2c620f52c280c8cb1cb3b02b41c7fc80fa934bd8ebc48540a71ba2711b5bbd55
+[INFO] F8: Push successful
+[INFO] F8: Build hello-s2i-3 in status Complete
+[INFO] F8: Found tag on ImageStream hello tag: sha256:2c620f52c280c8cb1cb3b02b41c7fc80fa934bd8ebc48540a71ba2711b5bbd55
+[INFO] F8: ImageStream hello written to /home/student/DO288-apps/micro-java/target/hello-is.yml
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ hello ---
+[INFO] Installing /home/student/DO288-apps/micro-java/target/hello.war to /home/student/.m2/repository/com/redhat/training/openshift/hello/1.0/hello-1.0.war
+[INFO] Installing /home/student/DO288-apps/micro-java/pom.xml to /home/student/.m2/repository/com/redhat/training/openshift/hello/1.0/hello-1.0.pom
+[INFO] Installing /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/kubernetes.yml to /home/student/.m2/repository/com/redhat/training/openshift/hello/1.0/hello-1.0-kubernetes.yml
+[INFO] Installing /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/openshift.yml to /home/student/.m2/repository/com/redhat/training/openshift/hello/1.0/hello-1.0-openshift.yml
+[INFO] Installing /home/student/DO288-apps/micro-java/target/hello-thorntail.jar to /home/student/.m2/repository/com/redhat/training/openshift/hello/1.0/hello-1.0-thorntail.jar
+[INFO] Installing /home/student/DO288-apps/micro-java/target/hello-is.yml to /home/student/.m2/repository/com/redhat/training/openshift/hello/1.0/hello-1.0-is.yml
+[INFO] 
+[INFO] <<< fabric8-maven-plugin:4.1.0:deploy (default-cli) < install @ hello <<<
+[INFO] 
+[INFO] 
+[INFO] --- fabric8-maven-plugin:4.1.0:deploy (default-cli) @ hello ---
+[INFO] F8: Using OpenShift at https://api.ocp-eu2.prod.nextcle.com:6443/ in namespace maxbaltin-micro-java with manifest /home/student/DO288-apps/micro-java/target/classes/META-INF/fabric8/openshift.yml 
+[INFO] OpenShift platform detected
+[INFO] F8: Using project: maxbaltin-micro-java
+[INFO] F8: Updating a Service from openshift.yml
+[INFO] F8: Updated Service: target/fabric8/applyJson/maxbaltin-micro-java/service-hello-2.json
+[INFO] F8: Updating ConfigMap from openshift.yml
+[INFO] F8: Updated ConfigMap: target/fabric8/applyJson/maxbaltin-micro-java/configmap-env-config-1.json
+[INFO] F8: Updating DeploymentConfig from openshift.yml
+[INFO] F8: Updated DeploymentConfig: target/fabric8/applyJson/maxbaltin-micro-java/deploymentconfig-hello-2.json
+[INFO] F8: HINT: Use the command `oc get pods -w` to watch your pods start up
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:59 min
+[INFO] Finished at: 2020-08-07T14:21:41Z
+[INFO] ------------------------------------------------------------------------
